@@ -90,8 +90,8 @@ body {
 
 .paper-button {
     display: inline-block;
-    padding: 4px 10px;
-    font-size: 16px;
+    padding: 3px 10px;
+    font-size: 15px;
     color: white;
     background-color: #93b5b481;
     text-align: center;
@@ -101,8 +101,8 @@ body {
 
 .slides-button {
     display: inline-block;
-    padding: 4px 10px;
-    font-size: 16px;
+    padding: 3px 10px;
+    font-size: 15px;
     color: white;
     background-color: #cdd0989d;
     text-align: center;
@@ -112,8 +112,8 @@ body {
 
 .code-button {
     display: inline-block;
-    padding: 4px 10px;
-    font-size: 16px;
+    padding: 3px 10px;
+    font-size: 15px;
     color: white;
     background-color: #d2ae979d;
     text-align: center;
@@ -123,8 +123,8 @@ body {
 
 .video-button {
     display: inline-block;
-    padding: 4px 10px;
-    font-size: 16px;
+    padding: 3px 10px;
+    font-size: 15px;
     color: white;
     background-color: #8a865e6b;
     text-align: center;
@@ -134,8 +134,8 @@ body {
 
 .poster-button {
     display: inline-block;
-    padding: 4px 10px;
-    font-size: 16px;
+    padding: 3px 10px;
+    font-size: 15px;
     color: white;
     background-color: #7b5f5250;
     text-align: center;
