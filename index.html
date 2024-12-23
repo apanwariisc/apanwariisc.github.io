@@ -6,6 +6,77 @@
 	<title>Ashish Panwar</title>
 	<link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .photo img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            margin-right: 20px;
+        }
+        .bio h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .bio p {
+            margin: 10px 0;
+        }
+        .social-links a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .social-links i {
+            margin-right: 5px;
+        }
+        .publications, .service {
+            margin-top: 20px;
+        }
+        .publications h2, .service h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .publications ul, .service ul {
+            list-style: none;
+            padding: 0;
+        }
+        .publications li, .service li {
+            margin-bottom: 15px;
+        }
+        .publications h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .publications p {
+            margin: 5px 0;
+        }
+        .publications a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .publications a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 	<div class="container">
@@ -26,7 +97,7 @@
                     <a href="https://www.csa.iisc.ac.in/~gopi/">Prof. K. Gopinath</a> and <a href="https://www.csa.iisc.ac.in/~arkapravab/">Prof. Arkaprava Basu</a>.
                     My <a href="/publications/apanwar_phdthesis_2022.pdf">thesis</a> explores various OS techniques
                     (i.e., optimizing huge pages and NUMA memory management) to improve the efficiency of virtual memory abstraction - a pre-requisite to
-                    building efficient large-scale memory systems and applications. During PhD, I received the Prime Minister's Fellowship Scheme for Doctoral Research, co-sponsored by the Confederation of Indian
+                    building efficient large-scale memory systems. During PhD, I received the Prime Minister's Fellowship Scheme for Doctoral Research, co-sponsored by the Confederation of Indian
                     Industry and Microsoft Research India. I also received the best PhD thesis award from CSA.
                 </p>
             </br>
@@ -49,7 +120,7 @@
 				<li>
                 <h3>vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention</h3>
                     <p>Ramya Prabhu, Ajay Nayak, Jayashree Mohan, Ramachandran Ramjee, Ashish Panwar</p>
-                    <p>Conditionally accepted to appear in ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2025.</p>
+                    <p>To appear in ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2025.</p>
 					<a href="https://arxiv.org/abs/2405.04437" class="paper-button">Preprint</a> |
                     <a href="https://github.com/microsoft/vattention" class="code-button">Code</a>
                 </li>

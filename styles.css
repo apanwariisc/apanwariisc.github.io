@@ -47,7 +47,7 @@ body {
 	font-size: 1.5em;
 	color: rgb(0, 0, 0);
 	margin-bottom: 10px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .publications ul {
@@ -83,9 +83,9 @@ body {
 /* Publications styles */
 .service h2 {
 	font-size: 1.5em;
-	color: #452403;
+	color: #032045;
 	margin-bottom: 10px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .paper-button {
