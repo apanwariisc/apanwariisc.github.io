@@ -15,7 +15,7 @@
             background-color: #f4f4f4;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1200px; /* Increased width */
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
@@ -59,8 +59,15 @@
             list-style: none;
             padding: 0;
         }
+        .publications ul {
+            list-style-type: disc; /* Use bullets for list items */
+            padding-left: 20px; /* Add padding to align bullets */
+        }
+        .publications ul li::marker {
+            font-size: 1.25em; /* Increase the size of the bullet points */
+        }
         .publications li, .service li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .publications h3 {
             margin: 0;
@@ -75,6 +82,9 @@
         }
         .publications a:hover {
             text-decoration: underline;
+        }
+        .bio {
+            font-size: 0.9em; /* Reduced font size */
         }
     </style>
 </head>
