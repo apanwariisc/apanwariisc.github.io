@@ -17,7 +17,7 @@
             font-size: 0.8em; /* Adjust font size */
         }
         .container {
-            max-width: 1125px; /* Adjust max-width */
+            max-width: 1325px; /* Adjust max-width */
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
@@ -45,6 +45,7 @@
             line-height: 1.6;
         }
         .social-links {
+            font-size: 1.5em;
             margin-top: 20px;
         }
         .social-links a {
@@ -65,24 +66,20 @@
             color: #05072c;
             font-size: 1.5em; /* Adjust font size */
         }
-        .publications ul, .service ul {
-            list-style: none;
-            padding: 0;
-        }
         .publications ul {
             list-style-type: disc;
             padding-left: 20px;
         }
         .publications ul li::marker {
-            font-size: 1.25em;
+            font-size: 1.45em;
         }
         .publications li, .service li {
             margin-bottom: 12px;
         }
         .publications h3 {
             margin: 0;
-            font-size: 1em; /* Adjust font size */
-            color: #007bff;
+            font-size: 1.3em; /* Increase font size */
+            color: #2e4b9cd9;
         }
         .publications p {
             margin: 5px 0;
@@ -97,6 +94,10 @@
         .bio {
             font-size: 1em;
         }
+        .service {
+            margin-top: 40px;
+            font-size: 1.2em; /* Increase font size */
+        }
     </style>
 </head>
 <body>
@@ -108,7 +109,7 @@
             <div class="bio">
                 <h1>Ashish Panwar</h1>
                 <p>
-                    I am a Principal Researcher at <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-india/">Microsoft Research India</a>
+                    I am a Senior Researcher at <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-india/">Microsoft Research India</a>
                     where I work on <a href="https://www.microsoft.com/en-us/research/theme/systems/">Systems</a> |
                     <a href="https://www.microsoft.com/en-us/research/project/ai-infrastructure/">AI Infrastructure</a> research. I am primarily interested
                     in working on fundamental computer systems problems with current focus being more on optimizing large language model (LLM) inference.
@@ -139,31 +140,30 @@
             <h2>Publications</h2>
             <ul>
                 <li>
-                    <h3>POD-Attention: Unlocking Full Prefill-Decode Overlap for Faster LLM Inference</h3>
+                    <h3>[ASPLOS'25] POD-Attention: Unlocking Full Prefill-Decode Overlap for Faster LLM Inference</h3>
                     <p>Aditya K Kamath, Ramya Prabhu, Jayashree Mohan, Simon Peter, Ramachandran Ramjee, Ashish Panwar</p>
-                    <p>To appear in ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2025.</p>
-                    <!--- <a href="publications/asplos-2025-vattention/vattention-asplos25.pdf" class="paper-button">Paper</a> | --->
-                    <a href="publications/asplos-2025-pod-attention/pod-attention-asplos25.pdf" class="paper-button">Paper</a> |
-                    <a href="https://arxiv.org/pdf/2410.18038" class="paper-button">Preprint</a> |
+                    <p>Conditionally accepted to appear in ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2025.</p>
+                    <a href="publications/asplos-2025-vattention/vattention-asplos25.pdf" class="paper-button">Paper</a>
+                    <!--<a href="https://arxiv.org/pdf/2410.18038" class="paper-button">Preprint</a> --> |
                     <a href="https://github.com/microsoft/vattention/tree/main/pod_attn" class="code-button">Code</a>
                 </li>
                 <li>
-                    <h3>vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention</h3>
+                    <h3>[ASPLOS'25] vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention</h3>
                     <p>Ramya Prabhu, Ajay Nayak, Jayashree Mohan, Ramachandran Ramjee, Ashish Panwar</p>
                     <p>To appear in ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2025.</p>
                     <a href="publications/asplos-2025-vattention/vattention-asplos25.pdf" class="paper-button">Paper</a> |
-                    <a href="https://arxiv.org/abs/2405.04437" class="paper-button">Preprint</a> |
+                    <!--<a href="https://arxiv.org/abs/2405.04437" class="paper-button">Preprint</a> | -->
                     <a href="https://github.com/microsoft/vattention" class="code-button">Code</a>
                 </li>
                 <li>
-                    <h3>Taming Throughput-Latency Trade-off in LLM Inference with Sarathi-Serve</h3>
+                    <h3>[OSDI'24] Taming Throughput-Latency Trade-off in LLM Inference with Sarathi-Serve</h3>
                     <p>Amey Agrawal, Nitin Kedia, Ashish Panwar, Jayashree Mohan, Nipun Kwatra, Bhargav Gulavani, Alexey Tumanov, Ramachandran Ramjee</p>
                     <p>Published in 18th USENIX Symposium on Operating Systems Design and Implementation (OSDI) 2024.</p>
                     <a href="publications/osdi-2024-sarathi-serve/osdi24-sarathiserve.pdf" class="paper-button">Paper</a> |
                     <a href="https://github.com/microsoft/sarathi-serve" class="code-button">Code</a>
                 </li>
                 <li>
-                    <h3>VIDUR: A Large-Scale Simulation Framework for LLM Inference</h3>
+                    <h3>[MLSys'24] VIDUR: A Large-Scale Simulation Framework for LLM Inference</h3>
                     <p>Amey Agrawal, Nitin Kedia, Jayashree Mohan, Ashish Panwar, Nipun Kwatra, Bhargav S. Gulavani, Ramachandran Ramjee, Alexey Tumanov</p>
                     <p>Published in the 7th Annual Conference on Machine Learning and Systems (MLSys) 2024. </p>
                     <a href="publications/mlsys-2024-vidur/vidur_mlsys24.pdf" class="paper-button">Paper</a> |
@@ -171,25 +171,25 @@
                     <a href="https://vidur.westus2.cloudapp.azure.com/" class="video-button">Demo</a>
                 </li>
                 <li>
-                    <h3>SIGMA: Secure GPT Inference with Function Secret Sharing</h3>
+                    <h3>[PETS'24] SIGMA: Secure GPT Inference with Function Secret Sharing</h3>
                     <p>Kanav Gupta, Neha Jawalkar, Ananta Mukherjee, Nishanth Chandran, Divya Gupta, Ashish Panwar, Rahul Sharma</p>
                     <p>Published in 24th Privacy Enhancing Technologies Symposium (PETS) 2024.</p>
                     <a href="publications/pets-2024-sigma/sigma.pdf" class="paper-button">Paper</a>
                 </li>
                 <li>
-                    <h3>Address Scaling: Architectural Support for Fine-Grained Thread-Safe Metadata Management</h3>
+                    <h3>[IEEE CAL'24] Address Scaling: Architectural Support for Fine-Grained Thread-Safe Metadata Management</h3>
                     <p>Deepanjali Mishra, Konstantinos Kanellopoulos, Ashish Panwar, Akshitha Sriraman, Vivek Seshadri, Onur Mutlu, Todd C Mowry</p>
                     <p>Published in IEEE Computer Architecture Letters 2024. </p>
                     <a href="publications/ical-2024-address-scaling/address-scaling.pdf" class="paper-button">Paper</a>
                 </li>
                 <li>
-                    <h3>SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills</h3>
+                    <h3>[Arxiv] SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills</h3>
                     <p>Amey Agrawal, Ashish Panwar, Jayashree Mohan, Nipun Kwatra, Bhargav S. Gulavani, Ramachandran Ramjee</p>
                     <p>Arxiv 2023.</p>
                     <a href="https://arxiv.org/abs/2308.16369" class="paper-button">Preprint</a>
                 </li>
                 <li>
-                    <h3>Trident: Harnessing Architectural Resources for All Page Sizes in x86 Processors</h3>
+                    <h3>[MICRO'21] Trident: Harnessing Architectural Resources for All Page Sizes in x86 Processors</h3>
                     <p>Venkat Sri Sai Ram, Ashish Panwar, Arkaprava Basu</p>
                     <p>Published in 54th IEEE/ACM International Symposium on Microarchitecture (MICRO) 2021. </p>
                     <a href="/publications/micro-2021-trident/trident-micro21.pdf" class="paper-button">Paper</a> |
@@ -198,7 +198,7 @@
                     <a href="https://www.youtube.com/watch?v=odivJrmO3o8&t=270s" class="video-button">Video</a>
                 </li>
                 <li>
-                    <h3>nuKSM: NUMA-aware Memory De-duplication on Multi-socket Servers</h3>
+                    <h3>[PACT'21] nuKSM: NUMA-aware Memory De-duplication on Multi-socket Servers</h3>
                     <p>Akash Panda, Ashish Panwar, Arkaprava Basu</p>
                     <p>Published in 30th International Conference on Parallel Architectures and Compilation Techniques (PACT) 2021. </p>
                     <a href="/publications/pact-2021-nuksm/nuksm-pact21.pdf" class="paper-button">Paper</a> |
@@ -207,7 +207,7 @@
                     <a href="https://www.youtube.com/watch?v=c8uFqApoa20" class="video-button">Video</a>
                 </li>
                 <li>
-                    <h3>Fast Local Page-Tables for Virtualized NUMA Servers with vMitosis</h3>
+                    <h3>[ASPLOS'21] Fast Local Page-Tables for Virtualized NUMA Servers with vMitosis</h3>
                     <p>Ashish Panwar, Reto Achermann, Arkaprava Basu, Abhishek Bhattacharjee, K. Gopinath, Jayneel Gandhi</p>
                     <p>Published in 26th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2021. </p>
                     <a href="/publications/asplos-2021-vmitosis/vmitosis-asplos21.pdf" class="paper-button">Paper</a> |
@@ -217,7 +217,7 @@
                     <a href="https://www.youtube.com/watch?v=FKLMAOVtt9k&t=197s" class="video-button">Video</a>
                 </li>
                 <li>
-                    <h3>Mitosis: Transparently Self-Replicating Page-Tables for Large-Memory Machines</h3>
+                    <h3>[ASPLOS'20] Mitosis: Transparently Self-Replicating Page-Tables for Large-Memory Machines</h3>
                     <p>Reto Achermann, Ashish Panwar, Abhishek Bhattacharjee, Timothy Roscoe, Jayneel Gandhi</p>
                     <p>Published in 25th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2020. </p>
                     <a href="/publications/asplos-2020-mitosis/mitosis-asplos20.pdf" class="paper-button">Paper</a> |
@@ -226,7 +226,7 @@
                     <a href="https://www.youtube.com/watch?v=ON0dmv7NJv8" class="video-button">Video</a>
                 </li>
                 <li>
-                    <h3>HawkEye: Efficient Fine-grained OS Support for Huge Pages</h3>
+                    <h3>[ASPLOS'19] HawkEye: Efficient Fine-grained OS Support for Huge Pages</h3>
                     <p>Ashish Panwar, Sorav Bansal, K. Gopinath</p>
                     <p>Published in 24th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2019. </p>
                     <a href="/publications/asplos-2019-hawkeye/hawkeye-asplos19.pdf" class="paper-button">Paper</a> |
@@ -235,7 +235,7 @@
                     <a href="/publications/asplos-2019-hawkeye/hawkeye-asplos19-poster.pdf" class="poster-button">Poster</a>
                 </li>
                 <li>
-                    <h3>Making Huge Pages Actually Useful</h3>
+                    <h3>[ASPLOS'18] Making Huge Pages Actually Useful</h3>
                     <p>Ashish Panwar, Aravinda Prasad, K. Gopinath</p>
                     <p>Published in 23rd ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2018. </p>
                     <a href="/publications/asplos-2018-illuminator/illuminator-asplos18.pdf" class="paper-button">Paper</a> |
@@ -244,13 +244,13 @@
                     <a href="/publications/asplos-2018-illuminator/illuminator-asplos18-poster.pdf" class="poster-button">Poster</a>
                 </li>
                 <li>
-                    <h3>A Case for Protecting Huge Pages from the Kernel</h3>
+                    <h3>[APSys'16] A Case for Protecting Huge Pages from the Kernel</h3>
                     <p>Ashish Panwar, Naman Patel, K. Gopinath</p>
                     <p>Published in 7th ACM SIGOPS Asia-Pacific Workshop on Systems (APSys) 2016. </p>
                     <a href="/publications/apsys-2016/apsys-2016-paper.pdf" class="paper-button">Paper</a>
                 </li>
                 <li>
-                    <h3>Towards Practical Page Placement for a Green Memory Manager</h3>
+                    <h3>[HiPC'15] Towards Practical Page Placement for a Green Memory Manager</h3>
                     <p>Ashish Panwar and K. Gopinath</p>
                     <p> Published in 22nd IEEE International Conference on High Performance Computing (HiPC) 2015. </p>
                     <a href="/publications/hipc-2015/hipc-2015-paper.pdf" class="paper-button">Paper</a> |
@@ -262,9 +262,11 @@
             <h2>Service</h2>
             <p> I have served or will be serving as a reviewer on the following program committees: </p>
             <ul>
-                <li>ASPLOS 2024, 2025</li>
-                <li>ATC 2024, 2025 </li>
-                <li>ISMM 2024</li>
+                <li>ACM Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2025</li>
+                <li>ACM Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2024</li>
+                <li>Usenix Annual Technical Conference (ATC) 2025</li>
+                <li>Usenix Annual Technical Conference (ATC) 2024</li>
+                <li>ACM SIGPLAN International Symposium on Memory management (ISMM) 2024</li>
             </ul>
         </div>
     </div>
