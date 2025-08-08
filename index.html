@@ -20,24 +20,33 @@
                 <p class="bio">
                     I enjoy working on fundamental computer systems problems. In my current role at Microsoft Research India (since 2022), we explore <a href="https://www.microsoft.com/en-us/research/theme/systems/">Systems</a> and <a href="https://www.microsoft.com/en-us/research/project/ai-infrastructure/">AI Infrastructure</a> research with a particular focus on optimizing large language model (LLM) inference.
                     I obtained my MSc (Engg) and PhD both from <a href="https://www.csa.iisc.ac.in/">CSA @ Indian Institute of Science</a> where I worked with <a href="https://www.csa.iisc.ac.in/~gopi/">Prof. K. Gopinath</a> & <a href="https://www.csa.iisc.ac.in/~arkapravab/">Prof. Arkaprava Basu</a>. <br>
-                    PhD Thesis: <a href="/publications/apanwar_phdthesis_2022.pdf">Operating System Support for Efficient Virtual Memory </a></a>
+                    PhD Thesis: <a href="/publications/apanwar_phdthesis_2022.pdf">Operating System Support for Efficient Virtual Memory</a>
                 </p>
-                <div class="social-links">
-                    <a href="http://scholar.google.co.in/citations?user=2navLOMAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://github.com/apanwariisc" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/panwar-ashish/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <div class="social-row">
+                    <div class="social-links">
+                        <a href="http://scholar.google.co.in/citations?user=2navLOMAAAAJ&hl=en" target="_blank" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/apanwariisc" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/panwar-ashish/" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                        <span>Dark</span>
+                    </button>
                 </div>
             </div>
         </header>
         <main class="main-content">
-            <div class="tabs">
-                <button class="tab-link active" onclick="openTab(event, 'publications')">Publications</button>
-                <button class="tab-link" onclick="openTab(event, 'service')">Service</button>
+            <div class="tabs" role="tablist" aria-label="Primary Tabs">
+                <button id="tab-publications" class="tab-link active" role="tab" aria-selected="true" aria-controls="publications" onclick="openTab(event, 'publications')">Publications</button>
+                <button id="tab-service" class="tab-link" role="tab" aria-selected="false" aria-controls="service" onclick="openTab(event, 'service')">Service</button>
             </div>
 
-            <div id="publications" class="tab-content active">
+            <div id="publications" class="tab-content active" role="tabpanel" aria-labelledby="tab-publications">
                 <section class="publications-section">
-                    <!--<h2>Publications</h2> -->
+                    <!-- Toolbar: search -->
+                    <div class="toolbar">
+                        <input type="search" id="pubSearch" class="input" placeholder="Search publications (title, authors, venue)..." aria-label="Search publications" />
+                    </div>
                     <div class="publications-list">
                         <!-- Each publication as a card -->
                         <div class="pub-card">
@@ -197,7 +206,7 @@
                 </section>
             </div>
 
-            <div id="service" class="tab-content">
+            <div id="service" class="tab-content" role="tabpanel" aria-labelledby="tab-service">
                 <section class="service-section">
                     <!--<h2>Service</h2>-->
                     <div class="service-card">
@@ -227,19 +236,63 @@
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
                 tabcontent[i].classList.remove("active");
+                tabcontent[i].setAttribute('aria-hidden', 'true');
             }
             tablinks = document.getElementsByClassName("tab-link");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
+                tablinks[i].setAttribute('aria-selected', 'false');
             }
-            document.getElementById(tabName).style.display = "block";
-            document.getElementById(tabName).classList.add("active");
+            var panel = document.getElementById(tabName);
+            panel.style.display = "block";
+            panel.classList.add("active");
+            panel.setAttribute('aria-hidden', 'false');
             evt.currentTarget.className += " active";
+            evt.currentTarget.setAttribute('aria-selected', 'true');
         }
 
-        // Show the default tab
+        function updateThemeToggleUI() {
+            var btn = document.getElementById('themeToggle');
+            if (!btn) return;
+            var isDark = document.body.classList.contains('dark');
+            btn.querySelector('i').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            btn.querySelector('span').textContent = isDark ? 'Light' : 'Dark';
+        }
+
         document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("publications").style.display = "block";
+            // Default tab visible
+            var publications = document.getElementById("publications");
+            if (publications) publications.style.display = "block";
+
+            // Theme: load preference
+            var saved = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (!saved && prefersDark)) {
+                document.body.classList.add('dark');
+            }
+            updateThemeToggleUI();
+
+            var toggle = document.getElementById('themeToggle');
+            if (toggle) {
+                toggle.addEventListener('click', function() {
+                    document.body.classList.toggle('dark');
+                    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+                    updateThemeToggleUI();
+                });
+            }
+
+            // Publications search filter
+            var search = document.getElementById('pubSearch');
+            if (search) {
+                search.addEventListener('input', function() {
+                    var q = this.value.toLowerCase();
+                    var cards = document.querySelectorAll('.pub-card');
+                    cards.forEach(function(card) {
+                        var text = card.innerText.toLowerCase();
+                        card.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+                    });
+                });
+            }
         });
     </script>
 </body>
