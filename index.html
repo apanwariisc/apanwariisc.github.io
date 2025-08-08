@@ -43,10 +43,6 @@
 
             <div id="publications" class="tab-content active" role="tabpanel" aria-labelledby="tab-publications">
                 <section class="publications-section">
-                    <!-- Toolbar: search -->
-                    <div class="toolbar">
-                        <input type="search" id="pubSearch" class="input" placeholder="Search publications (title, authors, venue)..." aria-label="Search publications" />
-                    </div>
                     <div class="publications-list">
                         <!-- Each publication as a card -->
                         <div class="pub-card">
@@ -278,19 +274,6 @@
                     document.body.classList.toggle('dark');
                     localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
                     updateThemeToggleUI();
-                });
-            }
-
-            // Publications search filter
-            var search = document.getElementById('pubSearch');
-            if (search) {
-                search.addEventListener('input', function() {
-                    var q = this.value.toLowerCase();
-                    var cards = document.querySelectorAll('.pub-card');
-                    cards.forEach(function(card) {
-                        var text = card.innerText.toLowerCase();
-                        card.style.display = text.indexOf(q) !== -1 ? '' : 'none';
-                    });
                 });
             }
         });
