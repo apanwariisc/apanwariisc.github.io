@@ -14,17 +14,17 @@
     --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
 }
 
-/* Dark mode */
+/* Dark mode - Elegant Gray Theme */
 body.dark {
-    --accent: #60a5fa;
-    --accent-strong: #93c5fd;
-    --accent-light: #0b1220;
-    --bg: #0b1220;
-    --surface: #0f172a;
-    --text: #e5e7eb;
-    --muted: #cbd5e1;
-    --border: #1f2937;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --accent: #60d394; /* Bright teal-green for excellent contrast */
+    --accent-strong: #4ecdc4; /* Slightly blue-teal for hover states */
+    --accent-light: #1e1e2e; /* Subtle dark purple-gray */
+    --bg: #2a2a2a; /* Medium gray background */
+    --surface: #363636; /* Lighter gray for cards */
+    --text: #e8e8e8; /* Soft white for text */
+    --muted: #a1a1aa; /* Muted gray for secondary text */
+    --border: #4a4a4a; /* Subtle border color */
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Softer shadow */
 }
 
 html, body {
@@ -259,6 +259,61 @@ html, body {
     color: var(--accent-strong);
     text-decoration-color: var(--accent-strong);
     border-color: transparent;
+}
+
+/* Abstract functionality */
+.abstract-section {
+    margin-top: 12px;
+    padding: 12px;
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.abstract-section.expanded {
+    display: block;
+}
+
+.abstract-text {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0;
+}
+
+.btn-abstract {
+    display: inline;
+    background: none;
+    color: var(--accent);
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1.5px;
+    font-weight: 600;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.btn-abstract:hover {
+    background: none;
+    color: var(--accent-strong);
+    text-decoration-color: var(--accent-strong);
+}
+
+.btn-abstract:focus-visible {
+    outline: 2px dotted var(--accent);
+    outline-offset: 2px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .service-card {
