@@ -268,12 +268,12 @@ html, body {
     background: var(--accent-light);
     border: 1px solid var(--border);
     border-radius: 8px;
-    display: none;
+    display: none !important;
     animation: fadeIn 0.3s ease-in-out;
 }
 
 .abstract-section.expanded {
-    display: block;
+    display: block !important;
 }
 
 .abstract-text {

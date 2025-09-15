@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashish Panwar</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -54,7 +54,7 @@
                                 <button class="btn-abstract" onclick="toggleAbstract('abstract-ismm25')">Abstract</button>
                                 <a href="publications/ismm-2025-emd/emd-ismm25.pdf" class="btn">Paper</a>
                             </div>
-                            <div id="abstract-ismm25" class="abstract-section">
+                            <div id="abstract-ismm25" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Processors rely on huge pages to reduce the cost of virtual-to-physical address translation. However, huge pages are notorious
                                     for creating memory bloat – a phenomenon wherein the OS ends up allocating more physical memory to an application than its actual requirement.
@@ -78,7 +78,7 @@
                                 <a href="publications/asplos-2025-pod-attention/pod-attention-asplos25.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/microsoft/vattention/tree/main/pod_attn" class="btn btn-secondary">Code</a>
                             </div>
-                            <div id="abstract-pod-attention" class="abstract-section">
+                            <div id="abstract-pod-attention" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Each request in LLM inference goes through two phases: compute-bound prefill and memory-bandwidth-bound decode. To improve GPU utilization, recent systems use hybrid 
                                     batching that combines the prefill and decode phases of different requests into the same batch. This approach optimizes linear operations but remains inefficient for
@@ -100,7 +100,7 @@
                                 <a href="publications/asplos-2025-vattention/vattention-asplos25.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/microsoft/vattention" class="btn btn-secondary">Code</a>
                             </div>
-                            <div id="abstract-vattention" class="abstract-section">
+                            <div id="abstract-vattention" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     PagedAttention is a popular approach for dynamic memory allocation in LLM serving systems. It enables on-demand allocation of GPU memory to mitigate KV cache fragmentation — a phenomenon
                                     that crippled the batch size (and consequently throughput) in prior systems. However, in trying to allocate physical memory at runtime, PagedAttention ends up changing the virtual memory
@@ -122,7 +122,7 @@
                                 <a href="publications/osdi-2024-sarathi-serve/osdi24-sarathiserve.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/microsoft/sarathi-serve" class="btn btn-secondary">Code</a>
                             </div>
-                            <div id="abstract-sarathi-serve" class="abstract-section">
+                            <div id="abstract-sarathi-serve" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Each LLM serving request goes through two phases. The first is prefill which processes the entire input prompt and produces the first output token and the second is decode which
                                     generates the rest of output tokens, one-at-a-time. Prefill iterations have high latency but saturate GPU compute due to parallel processing of the input prompt. In contrast, decode
@@ -149,7 +149,7 @@
                                 <a href="https://github.com/microsoft/vidur" class="btn btn-secondary">Code</a>
                                 <a href="https://vidur.westus2.cloudapp.azure.com/" class="btn btn-secondary">Demo</a>
                             </div>
-                            <div id="abstract-vidur" class="abstract-section">
+                            <div id="abstract-vidur" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Optimizing the deployment of Large language models (LLMs) is expensive today since it requires experimentally running an application workload against an LLM implementation while exploring large configuration space formed 
                                     by system knobs such as parallelization strategies, batching techniques, and scheduling policies. To address this challenge, we present Vidur – a large-scale, high-fidelity, easily-extensible simulation framework for LLM
@@ -169,7 +169,7 @@
                                 <button class="btn-abstract" onclick="toggleAbstract('abstract-sigma')">Abstract</button>
                                 <a href="publications/pets-2024-sigma/sigma.pdf" class="btn">Paper</a>
                             </div>
-                            <div id="abstract-sigma" class="abstract-section">
+                            <div id="abstract-sigma" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Secure 2-party computation (2PC) enables secure inference that offers protection for both proprietary machine learning (ML) models and sensitive inputs to them. However, the existing secure inference
                                     solutions suffer from high latency and communication overheads, particularly for transformers. Function secret sharing (FSS) is a recent paradigm for obtaining efficient 2PC protocols with a
@@ -188,7 +188,7 @@
                                 <button class="btn-abstract" onclick="toggleAbstract('abstract-address-scaling')">Abstract</button>
                                 <a href="publications/ical-2024-address-scaling/address-scaling.pdf" class="btn">Paper</a>
                             </div>
-                            <div id="abstract-address-scaling" class="abstract-section">
+                            <div id="abstract-address-scaling" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     In recent decades, software systems have grown significantly in size and complexity. As a result, such systems are more prone to bugs which can cause performance and correctness
                                     challenges. Using run-time monitoring tools is one approach to mitigate these challenges. However, these tools maintain metadata for every byte of application data they monitor,
@@ -208,7 +208,7 @@
                                 <button class="btn-abstract" onclick="toggleAbstract('abstract-sarathi-arxiv')">Abstract</button>
                                 <a href="https://arxiv.org/abs/2308.16369" class="btn">Preprint</a>
                             </div>
-                            <div id="abstract-sarathi-arxiv" class="abstract-section">
+                            <div id="abstract-sarathi-arxiv" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                 Large Language Model (LLM) inference consists of two distinct phases – prefill phase which processes the input prompt and decode phase which generates output tokens
                                 autoregressively. While the prefill phase effectively saturates GPU compute at small batch sizes, the decode phase results in low compute utilization as it generates
@@ -238,7 +238,7 @@
                                 <a href="/publications/micro-2021-trident/trident-micro21-slides.pptx" class="btn btn-secondary">Slides</a>
                                 <a href="https://www.youtube.com/watch?v=odivJrmO3o8&t=270s" class="btn btn-secondary">Video</a>
                             </div>
-                            <div id="abstract-trident" class="abstract-section">
+                            <div id="abstract-trident" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Intel and AMD processors have long supported more than one large page sizes – 1GB and 2MB, to reduce address translation overheads for applications with large memory footprints. However, previous
                                     works on large pages have primarily focused on 2MB pages, partly due to a lack of evidence on the usefulness of 1GB pages to realworld applications. Consequently, micro-architectural resources
@@ -263,7 +263,7 @@
                                 <a href="/publications/pact-2021-nuksm/nuksm-pact21-slides.pdf" class="btn btn-secondary">Slides</a>
                                 <a href="https://www.youtube.com/watch?v=c8uFqApoa20" class="btn btn-secondary">Video</a>
                             </div>
-                            <div id="abstract-nuksm" class="abstract-section">
+                            <div id="abstract-nuksm" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     An operating system has many memory management goals including reducing memory access latency, and reducing memory footprint. These goals can conflict with each
                                     other when independent subsystems optimize them in silos.
@@ -288,7 +288,7 @@
                                 <a href="/publications/asplos-2021-vmitosis/vmitosis-asplos21-slides.pptx" class="btn btn-secondary">Slides</a>
                                 <a href="https://www.youtube.com/watch?v=FKLMAOVtt9k&t=197s" class="btn btn-secondary">Video</a>
                             </div>
-                            <div id="abstract-vmitosis" class="abstract-section">
+                            <div id="abstract-vmitosis" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Increasing memory heterogeneity mandates careful data placement to hide the non-uniform memory access (NUMA) effects on applications. While NUMA optimizations have focused on application data
                                     for decades, they have ignored the placement of kernel data structures due to their small memory footprint; this is evident in typical OSes that pin kernel data structures in memory. In this paper, we
@@ -311,7 +311,7 @@
                                 <a href="/publications/asplos-2020-mitosis/mitosis-asplos20-slides.pptx" class="btn btn-secondary">Slides</a>
                                 <a href="https://www.youtube.com/watch?v=ON0dmv7NJv8" class="btn btn-secondary">Video</a>
                             </div>
-                            <div id="abstract-mitosis" class="abstract-section">
+                            <div id="abstract-mitosis" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Multi-socket machines with 1-100 TBs of physical memory are becoming prevalent. Applications running on such multisocket machines suffer non-uniform bandwidth and latency
                                     when accessing physical memory. Decades of research have focused on data allocation and placement policies in NUMA settings, but there have been no studies on the question of
@@ -336,7 +336,7 @@
                                 <a href="/publications/asplos-2019-hawkeye/hawkeye-asplos19-slides.pdf" class="btn btn-secondary">Slides</a>
                                 <a href="/publications/asplos-2019-hawkeye/hawkeye-asplos19-poster.pdf" class="btn btn-secondary">Poster</a>
                             </div>
-                            <div id="abstract-hawkeye" class="abstract-section">
+                            <div id="abstract-hawkeye" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Effective huge page management in operating systems is necessary for mitigation of address translation overheads. However, this continues to remain a difficult
                                     area in OS design. Recent work on Ingens [55] uncovered some interesting pitfalls in current huge page management strategies. Using both page access patterns
@@ -359,7 +359,7 @@
                                 <a href="/publications/asplos-2018-illuminator/illuminator-asplos18-slides.pptx" class="btn btn-secondary">Slides</a>
                                 <a href="/publications/asplos-2018-illuminator/illuminator-asplos18-poster.pdf" class="btn btn-secondary">Poster</a>
                             </div>
-                            <div id="abstract-illuminator" class="abstract-section">
+                            <div id="abstract-illuminator" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                 The virtual-to-physical address translation overhead, a major performance bottleneck for modern workloads, can be effectively alleviated with huge pages.
                                 However, since huge pages must be mapped contiguously, OSs have not been able to use them well because of the memory fragmentation problem despite hardware
@@ -383,7 +383,7 @@
                                 <button class="btn-abstract" onclick="toggleAbstract('abstract-apsys-2016')">Abstract</button>
                                 <a href="/publications/apsys-2016/apsys-2016-paper.pdf" class="btn">Paper</a>
                             </div>
-                            <div id="abstract-apsys-2016" class="abstract-section">
+                            <div id="abstract-apsys-2016" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Controlling memory fragmentation is critical for leveraging the benefits of huge page support offered by modern architectures. The division of free memory into non-contiguous
                                     regions over time restricts huge page allocations in long run. Compaction is a popular mechanism to recover contiguous blocks of free memory on demand. However, its success rate
@@ -406,7 +406,7 @@
                                 <a href="/publications/hipc-2015/hipc-2015-paper.pdf" class="btn">Paper</a>
                                 <a href="/publications/hipc-2015/hipc-2015-slides.pdf" class="btn btn-secondary">Slides</a>
                             </div>
-                            <div id="abstract-hipc-2015" class="abstract-section">
+                            <div id="abstract-hipc-2015" class="abstract-section" style="display: none;">
                                 <p class="abstract-text">
                                     Increased performance demand of modern applications has resulted in large memory modules and higher performance processors in computing systems. Power consumption becomes an important aspect when these
                                     resources go underutilized in a running system; e.g. during idle periods or lighter workloads. CPUs have come a long way in optimizing away the unnecessary power consumption in both hardware and
@@ -534,6 +534,13 @@
             var publications = document.getElementById("publications");
             if (publications) publications.style.display = "block";
 
+            // Ensure all abstracts are hidden on page load
+            var abstractSections = document.querySelectorAll('.abstract-section');
+            abstractSections.forEach(function(section) {
+                section.classList.remove('expanded');
+                section.style.display = 'none';
+            });
+
             // Theme: load preference
             var saved = localStorage.getItem('theme');
             var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -557,11 +564,29 @@
             var abstractSection = document.getElementById(abstractId);
             var btn = document.querySelector('[onclick="toggleAbstract(\'' + abstractId + '\')"]');
             
+            if (!abstractSection || !btn) return;
+            
             if (abstractSection.classList.contains('expanded')) {
                 abstractSection.classList.remove('expanded');
+                abstractSection.style.display = 'none';
                 btn.textContent = 'Abstract';
             } else {
+                // Hide all other expanded abstracts first
+                var allAbstracts = document.querySelectorAll('.abstract-section.expanded');
+                allAbstracts.forEach(function(section) {
+                    section.classList.remove('expanded');
+                    section.style.display = 'none';
+                });
+                
+                // Update all abstract buttons
+                var allButtons = document.querySelectorAll('.btn-abstract');
+                allButtons.forEach(function(button) {
+                    button.textContent = 'Abstract';
+                });
+                
+                // Show the current abstract
                 abstractSection.classList.add('expanded');
+                abstractSection.style.display = 'block';
                 btn.textContent = 'Hide Abstract';
             }
         }
