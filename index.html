@@ -51,7 +51,22 @@
                             <div class="pub-authors">Parth Gangar, Ashish Panwar, K. Gopinath</div>
                             <div class="pub-venue">24th ACM SIGPLAN International Symposium on Memory Management (ISMM) 2025.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-ismm25')">Abstract</button>
                                 <a href="publications/ismm-2025-emd/emd-ismm25.pdf" class="btn">Paper</a>
+                            </div>
+                            <div id="abstract-ismm25" class="abstract-section">
+                                <p class="abstract-text">
+                                    Processors rely on huge pages to reduce the cost of virtual-to-physical address translation. However, huge pages are notorious
+                                    for creating memory bloat – a phenomenon wherein the OS ends up allocating more physical memory to an application than its actual requirement.
+                                    This extra memory can be reclaimed by the OS via de-bloating at runtime. However, we find that current OS-level solutions either lack support for
+                                    dynamic memory de-bloating, or suffer from performance and fairness pathologies while de-bloating.
+                                   <br/> <br/> 
+                                    We address these issues with EMD (Efficient Memory Debloating). The key insight in EMD is that different regions in an application’s address space
+                                    exhibit different amounts of memory bloat. Consequently, the tradeoff between memory efficiency and performance varies significantly within a given
+                                    application e.g., we find that memory bloat is typically concentrated in specific regions, and de-bloating them leads to minimal performance impact.
+                                    Hinged on this insight, EMD employs a prioritization scheme for fine-grained, efficient, and fair reclamation of memory bloat. EMD improves performance
+                                    by up to 69% compared to HawkEye — a stateof-the-art OS-based huge page management system. EMD also eliminates fairness concerns associated with dynamic memory de-bloating.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -59,8 +74,21 @@
                             <div class="pub-authors">Aditya K Kamath, Ramya Prabhu, Jayashree Mohan, Simon Peter, Ramachandran Ramjee, Ashish Panwar</div>
                             <div class="pub-venue">30th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2025.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-pod-attention')">Abstract</button>
                                 <a href="publications/asplos-2025-pod-attention/pod-attention-asplos25.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/microsoft/vattention/tree/main/pod_attn" class="btn btn-secondary">Code</a>
+                            </div>
+                            <div id="abstract-pod-attention" class="abstract-section">
+                                <p class="abstract-text">
+                                    Each request in LLM inference goes through two phases: compute-bound prefill and memory-bandwidth-bound decode. To improve GPU utilization, recent systems use hybrid 
+                                    batching that combines the prefill and decode phases of different requests into the same batch. This approach optimizes linear operations but remains inefficient for
+                                    attention computation because existing attention kernels specialize execution independently for the prefill and decode phases.
+                                    <br/><br/>
+                                    In this paper, we present POD-Attention — the first GPU kernel that efficiently computes attention for hybrid batches. POD-Attention aims to maximize the utilization
+                                    of both compute and memory bandwidth by carefully allocating the GPU’s resources such that prefill and decode operations happen concurrently on the same multiprocessor.
+                                    POD-Attention speeds up attention computation by up to 59% (mean 28%), enabling higher throughput and lower latency LLM inference compared to the use of independently
+                                    optimized prefill and decode attention kernels.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -68,8 +96,21 @@
                             <div class="pub-authors">Ramya Prabhu, Ajay Nayak, Jayashree Mohan, Ramachandran Ramjee, Ashish Panwar</div>
                             <div class="pub-venue">30th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2025.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-vattention')">Abstract</button>
                                 <a href="publications/asplos-2025-vattention/vattention-asplos25.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/microsoft/vattention" class="btn btn-secondary">Code</a>
+                            </div>
+                            <div id="abstract-vattention" class="abstract-section">
+                                <p class="abstract-text">
+                                    PagedAttention is a popular approach for dynamic memory allocation in LLM serving systems. It enables on-demand allocation of GPU memory to mitigate KV cache fragmentation — a phenomenon
+                                    that crippled the batch size (and consequently throughput) in prior systems. However, in trying to allocate physical memory at runtime, PagedAttention ends up changing the virtual memory
+                                    layout of the KV cache from contiguous to non-contiguous. Such a design leads to non-trivial programming and performance overheads.
+                                    <br/><br/>
+                                    We present vAttention — an approach that mitigates fragmentation in physical memory while retaining the virtual memory contiguity of the KV cache. We achieve this by decoupling the
+                                    allocation of virtual and physical memory using CUDA virtual memory management APIs. We also introduce various LLM-specific optimizations to address the limitations of CUDA virtual memory
+                                    support. Overall, vAttention is a simpler, portable, and performant alternative to PagedAttention: it supports various attention kernels outof-the-box and improves LLM serving throughput
+                                    by up to 1.23× compared to the use of PagedAttention-based kernels of FlashAttention-2 and FlashInfer.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -77,8 +118,25 @@
                             <div class="pub-authors">Amey Agrawal, Nitin Kedia, Ashish Panwar, Jayashree Mohan, Nipun Kwatra, Bhargav Gulavani, Alexey Tumanov, Ramachandran Ramjee</div>
                             <div class="pub-venue">18th USENIX Symposium on Operating Systems Design and Implementation (OSDI) 2024.</div>
                             <div class="pub-links">
+                            <button class="btn-abstract" onclick="toggleAbstract('abstract-sarathi-serve')">Abstract</button>
                                 <a href="publications/osdi-2024-sarathi-serve/osdi24-sarathiserve.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/microsoft/sarathi-serve" class="btn btn-secondary">Code</a>
+                            </div>
+                            <div id="abstract-sarathi-serve" class="abstract-section">
+                                <p class="abstract-text">
+                                    Each LLM serving request goes through two phases. The first is prefill which processes the entire input prompt and produces the first output token and the second is decode which
+                                    generates the rest of output tokens, one-at-a-time. Prefill iterations have high latency but saturate GPU compute due to parallel processing of the input prompt. In contrast, decode
+                                    iterations have low latency but also low compute utilization because a decode iteration processes only a single token per request. This makes batching highly effective for decodes and
+                                    consequently for overall throughput. However, batching multiple requests leads to an interleaving of prefill and decode iterations which makes it challenging to achieve both high throughput and low latency.
+                                    <br/><br/>
+                                    We introduce an efficient LLM inference scheduler, SarathiServe, to address this throughput-latency tradeoff. SarathiServe introduces chunked-prefills which splits a prefill request into
+                                    near equal sized chunks and creates stall-free schedules that adds new requests in a batch without pausing ongoing decodes. Stall-free scheduling unlocks the opportunity to improve throughput
+                                    with large batch sizes while minimizing the effect of batching on latency. Furthermore, uniform batches in Sarathi-Serve ameliorate the imbalance between iterations, resulting in minimal pipeline bubbles.
+                                    <br/><br/>
+                                    Our techniques yield significant improvements in inference performance across models and hardware under tail latency constraints. For Mistral-7B on single A100 GPUs, we achieve 2.6× higher serving capacity and
+                                    up to 3.7× higher serving capacity for the Yi-34B model on two A100 GPUs as compared to vLLM. When used with pipeline parallelism on Falcon180B, Sarathi-Serve provides up to 5.6× gain in the end-toend serving capacity.
+                                    The source code for Sarathi-Serve is available at <a href="https://github.com/microsoft/sarathi-serve">https://github.com/microsoft/sarathi-serve</a>.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -86,9 +144,21 @@
                             <div class="pub-authors">Amey Agrawal, Nitin Kedia, Jayashree Mohan, Ashish Panwar, Nipun Kwatra, Bhargav S. Gulavani, Ramachandran Ramjee, Alexey Tumanov</div>
                             <div class="pub-venue">7th Annual Conference on Machine Learning and Systems (MLSys) 2024.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-vidur')">Abstract</button>
                                 <a href="publications/mlsys-2024-vidur/vidur_mlsys24.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/microsoft/vidur" class="btn btn-secondary">Code</a>
                                 <a href="https://vidur.westus2.cloudapp.azure.com/" class="btn btn-secondary">Demo</a>
+                            </div>
+                            <div id="abstract-vidur" class="abstract-section">
+                                <p class="abstract-text">
+                                    Optimizing the deployment of Large language models (LLMs) is expensive today since it requires experimentally running an application workload against an LLM implementation while exploring large configuration space formed 
+                                    by system knobs such as parallelization strategies, batching techniques, and scheduling policies. To address this challenge, we present Vidur – a large-scale, high-fidelity, easily-extensible simulation framework for LLM
+                                    inference performance. Vidur models the performance of LLM operators using a combination of experimental profiling and predictive modeling, and evaluates the end-to-end inference performance for different workloads 
+                                    by estimating several metrics of interest such as latency and throughput. We validate the fidelity of Vidur on several LLMs and show that it estimates inference latency with less than 9% error across the range. Further, we
+                                    present Vidur-Search, a configuration search tool that helps optimize LLM deployment. Vidur-Search uses Vidur to automatically identify the most cost-effective deployment configuration that meets application performance
+                                    constraints. For example, Vidur-Search finds the best deployment configuration for LLaMA2-70B in one hour on a CPU machine, in contrast to a deployment-based exploration which would require 42K GPU hours – costing
+                                    218K dollars. Source code for Vidur is available at <a href="https://github.com/microsoft/vidur">https://github.com/microsoft/vidur</a>.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -96,7 +166,18 @@
                             <div class="pub-authors">Kanav Gupta, Neha Jawalkar, Ananta Mukherjee, Nishanth Chandran, Divya Gupta, Ashish Panwar, Rahul Sharma</div>
                             <div class="pub-venue">24th Privacy Enhancing Technologies Symposium (PETS) 2024.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-sigma')">Abstract</button>
                                 <a href="publications/pets-2024-sigma/sigma.pdf" class="btn">Paper</a>
+                            </div>
+                            <div id="abstract-sigma" class="abstract-section">
+                                <p class="abstract-text">
+                                    Secure 2-party computation (2PC) enables secure inference that offers protection for both proprietary machine learning (ML) models and sensitive inputs to them. However, the existing secure inference
+                                    solutions suffer from high latency and communication overheads, particularly for transformers. Function secret sharing (FSS) is a recent paradigm for obtaining efficient 2PC protocols with a
+                                    preprocessing phase. We provide Sigma, the first end-to-end system for secure transformer inference based on FSS. By constructing new FSS-based protocols for complex machine learning functionalities,
+                                    such as Softmax, GeLU and SiLU, and also accelerating their computation on GPUs, Sigma improves the latency of secure inference of transformers by 12 − 19× over the state-of-the-art that uses
+                                    preprocessing and GPUs. We present the first secure inference of generative pre-trained transformer (GPT) models. In particular,Sigma executes Meta’s Llama2 (available on HuggingFace) with 13
+                                    billion parameters in 38 seconds and GPT2 in 1.5 seconds.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -104,7 +185,19 @@
                             <div class="pub-authors">Deepanjali Mishra, Konstantinos Kanellopoulos, Ashish Panwar, Akshitha Sriraman, Vivek Seshadri, Onur Mutlu, Todd C Mowry</div>
                             <div class="pub-venue">IEEE Computer Architecture Letters 2024.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-address-scaling')">Abstract</button>
                                 <a href="publications/ical-2024-address-scaling/address-scaling.pdf" class="btn">Paper</a>
+                            </div>
+                            <div id="abstract-address-scaling" class="abstract-section">
+                                <p class="abstract-text">
+                                    In recent decades, software systems have grown significantly in size and complexity. As a result, such systems are more prone to bugs which can cause performance and correctness
+                                    challenges. Using run-time monitoring tools is one approach to mitigate these challenges. However, these tools maintain metadata for every byte of application data they monitor,
+                                    which precipitates performance overheads from additional metadata accesses. We propose Address Scaling, a new hardware framework that performs fine-grained metadata management to
+                                    reduce metadata access overheads in run-time monitoring tools. Our mechanism is based on the observation that different run-time monitoring tools maintain metadata at varied
+                                    granularities. Our key insight is to maintain the data and its corresponding metadata within the same cache line, to preserve locality. Address Scaling improves the performance of
+                                    Memcheck, a dynamic monitoring tool that detects memory-related errors, by 3.55× and 6.58× for sequential and random memory access patterns respectively, compared to the state-of-the-art
+                                    systems that store the metadata in a memory region that is separate from the data.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -112,7 +205,26 @@
                             <div class="pub-authors">Amey Agrawal, Ashish Panwar, Jayashree Mohan, Nipun Kwatra, Bhargav S. Gulavani, Ramachandran Ramjee</div>
                             <div class="pub-venue">Arxiv 2023.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-sarathi-arxiv')">Abstract</button>
                                 <a href="https://arxiv.org/abs/2308.16369" class="btn">Preprint</a>
+                            </div>
+                            <div id="abstract-sarathi-arxiv" class="abstract-section">
+                                <p class="abstract-text">
+                                Large Language Model (LLM) inference consists of two distinct phases – prefill phase which processes the input prompt and decode phase which generates output tokens
+                                autoregressively. While the prefill phase effectively saturates GPU compute at small batch sizes, the decode phase results in low compute utilization as it generates
+                                one token at a time per request. The varying prefill and decode times also lead to imbalance across micro-batches when using pipelineparallelism, resulting in further
+                                inefficiency due to bubbles.
+                                <br/><br/>
+                                We present SARATHI to address these challenges. SARATHIemploys chunked-prefills, which splits a prefill request into equal sized chunks, and decode-maximal batching,
+                                which constructs a batch using a single prefill chunk and populates the remaining slots with decodes. During inference, the prefill chunk saturates GPU compute, while
+                                the decode requests ‘piggyback’ and cost up to an order of magnitude less compared to a decode-only batch. Chunked-prefills allows constructing multiple decode-maximal
+                                batches from a single prefill request, maximizing coverage of decodes that can piggyback.
+                                <br/><br/>
+                                Furthermore, the uniform compute design of these batches ameliorates the imbalance between micro-batches, significantly reducing pipeline bubbles. Our techniques yield
+                                significant improvements in inference performance across models and hardware. For the LLaMA-13B model on A6000 GPU, SARATHI improves decode throughput by up to 10×, and
+                                accelerates end-to-end throughput by up to 1.33×. For LLaMa-33B on A100 GPU, we achieve 1.25× higher end-to-end-throughput and up to 4.25× higher decode throughput. When
+                                used with pipeline parallelism on GPT-3, SARATHI reduces bubbles by 6.29×, resulting in an end-to-end throughput improvement of 1.91×.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -120,10 +232,24 @@
                             <div class="pub-authors">Venkat Sri Sai Ram, Ashish Panwar, Arkaprava Basu</div>
                             <div class="pub-venue">54th IEEE/ACM International Symposium on Microarchitecture (MICRO) 2021.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-trident')">Abstract</button>
                                 <a href="/publications/micro-2021-trident/trident-micro21.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/csl-iisc/Trident-MICRO21-artifact" class="btn btn-secondary">Code</a>
                                 <a href="/publications/micro-2021-trident/trident-micro21-slides.pptx" class="btn btn-secondary">Slides</a>
                                 <a href="https://www.youtube.com/watch?v=odivJrmO3o8&t=270s" class="btn btn-secondary">Video</a>
+                            </div>
+                            <div id="abstract-trident" class="abstract-section">
+                                <p class="abstract-text">
+                                    Intel and AMD processors have long supported more than one large page sizes – 1GB and 2MB, to reduce address translation overheads for applications with large memory footprints. However, previous
+                                    works on large pages have primarily focused on 2MB pages, partly due to a lack of evidence on the usefulness of 1GB pages to realworld applications. Consequently, micro-architectural resources
+                                    devoted to 1GB pages have gone underutilized for a decade.
+                                    <br/><br/> 
+                                    We quantitatively demonstrate where 1GB pages can be valuable, especially when employed in conjunction with 2MB pages. Unfortunately, the lack of application-transparent dynamic allocation of
+                                    1GB pages is to blame for the under-utilization of 1GB pages on today’s systems. Toward this, we design and implement Trident in Linux to fully harness micro-architectural resources devoted for
+                                    all page sizes in the current x86 hardware by transparently allocating 1GB, 2MB, and 4KB pages as suitable at runtime. Tridentspeeds up eight memory-intensive applications by 18%, on average, over Linux’s use of 2MB pages. We then propose Tridentpv, an
+                                    extension to Trident that virtualizes 1GB pages via copy-less promotion and compaction in the guest OS. Overall, this paper shows that adequate software enablement brings practical relevance to even GB-sized pages, and motivates micro-architects to continue 
+                                    enhancing hardware support for all large page sizes.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -131,22 +257,47 @@
                             <div class="pub-authors">Akash Panda, Ashish Panwar, Arkaprava Basu</div>
                             <div class="pub-venue">30th International Conference on Parallel Architectures and Compilation Techniques (PACT) 2021.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-nuksm')">Abstract</button>
                                 <a href="/publications/pact-2021-nuksm/nuksm-pact21.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/csl-iisc/nuKSM-pact21-artifact" class="btn btn-secondary">Code</a>
                                 <a href="/publications/pact-2021-nuksm/nuksm-pact21-slides.pdf" class="btn btn-secondary">Slides</a>
                                 <a href="https://www.youtube.com/watch?v=c8uFqApoa20" class="btn btn-secondary">Video</a>
                             </div>
+                            <div id="abstract-nuksm" class="abstract-section">
+                                <p class="abstract-text">
+                                    An operating system has many memory management goals including reducing memory access latency, and reducing memory footprint. These goals can conflict with each
+                                    other when independent subsystems optimize them in silos.
+                                    <br/><br/>
+                                    In this work, we report one such conflict that appears between memory de-duplication and NUMA (non-uniform memory access) management. Linux’s memory de-duplication
+                                    subsystem, namely KSM, is NUMA unaware. Consequently, while de-duplicating pages across NUMA nodes, it can place de-duplicated pages in a manner that can lead to significant
+                                    performance variations, unfairness, and subvert process priority. Toward this, we introduce NUMA-aware KSM, a.k.a.,nuKSM, that makes judicious decisions about the placement of
+                                    de-duplicated pages to reduce the impact of NUMA, unfairness, and avoid priority subversion. Independent of the NUMAeffects, we observed that KSM scales poorly to systems with
+                                    larger memory sizes due to its centralized design. Thus, we extended nuKSM to adopt a de-centralized design.
+                                </p>
+                                </div>
                         </div>
                         <div class="pub-card">
                             <div class="pub-title">[ASPLOS'21] Fast Local Page-Tables for Virtualized NUMA Servers with vMitosis</div>
                             <div class="pub-authors">Ashish Panwar, Reto Achermann, Arkaprava Basu, Abhishek Bhattacharjee, K. Gopinath, Jayneel Gandhi</div>
                             <div class="pub-venue">26th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2021.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-vmitosis')">Abstract</button>
                                 <a href="/publications/asplos-2021-vmitosis/vmitosis-asplos21.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/mitosis-project/vmitosis-asplos21-artifact" class="btn btn-secondary">Code</a>
                                 <a href="/publications/asplos-2021-vmitosis/vmitosis-ext-abstract.pdf" class="btn btn-secondary">Extended Abstract</a>
                                 <a href="/publications/asplos-2021-vmitosis/vmitosis-asplos21-slides.pptx" class="btn btn-secondary">Slides</a>
                                 <a href="https://www.youtube.com/watch?v=FKLMAOVtt9k&t=197s" class="btn btn-secondary">Video</a>
+                            </div>
+                            <div id="abstract-vmitosis" class="abstract-section">
+                                <p class="abstract-text">
+                                    Increasing memory heterogeneity mandates careful data placement to hide the non-uniform memory access (NUMA) effects on applications. While NUMA optimizations have focused on application data
+                                    for decades, they have ignored the placement of kernel data structures due to their small memory footprint; this is evident in typical OSes that pin kernel data structures in memory. In this paper, we
+                                    show that careful placement of kernel data structures is gaining importance in the context of page-tables: their sub-optimal placement causes severe slowdown (up to 3.1×) on virtualized NUMA servers.
+                                   <br/><br/> 
+                                    In response, we present vMitosis ś a system for explicit management of two-level page-tables, i.e., the guest and extended pagetables, on virtualized NUMA servers. vMitosis enables faster address
+                                    translation by migrating and replicating page-tables. It supports two prevalent virtualization configurations: first, where the hypervisor exposes the NUMA architecture to the guest OS, and second,
+                                    where such information is hidden from the guest OS. vMitosis is implemented in Linux/KVM, and our evaluation on a recent 1.5TiB 4-socket server shows that it effectively eliminates NUMA effects
+                                    on 2D page-table walks, resulting in a speedup of 1.8−3.1× for single-socket, and 1.06 − 1.6× for multi-socket workloads.
                             </div>
                         </div>
                         <div class="pub-card">
@@ -154,10 +305,24 @@
                             <div class="pub-authors">Reto Achermann, Ashish Panwar, Abhishek Bhattacharjee, Timothy Roscoe, Jayneel Gandhi</div>
                             <div class="pub-venue">25th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2020.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-mitosis')">Abstract</button>
                                 <a href="/publications/asplos-2020-mitosis/mitosis-asplos20.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/mitosis-project/mitosis-asplos20-artifact" class="btn btn-secondary">Code</a>
                                 <a href="/publications/asplos-2020-mitosis/mitosis-asplos20-slides.pptx" class="btn btn-secondary">Slides</a>
                                 <a href="https://www.youtube.com/watch?v=ON0dmv7NJv8" class="btn btn-secondary">Video</a>
+                            </div>
+                            <div id="abstract-mitosis" class="abstract-section">
+                                <p class="abstract-text">
+                                    Multi-socket machines with 1-100 TBs of physical memory are becoming prevalent. Applications running on such multisocket machines suffer non-uniform bandwidth and latency
+                                    when accessing physical memory. Decades of research have focused on data allocation and placement policies in NUMA settings, but there have been no studies on the question of
+                                    how to place page-tables amongst sockets. We make the case for explicit page-table allocation policies and show that pagetable placement is becoming crucial to overall performance.
+                                    <br/><br/> 
+                                    We propose Mitosis to mitigate NUMA effects on pagetable walks by transparently replicating and migrating pagetables across sockets without application changes. This reduces the
+                                    frequency of accesses to remote NUMA nodes when performing page-table walks. Mitosis uses two components: (i) a mechanism to efficiently enable and (ii) policies to effectively
+                                    control – page-table replication and migration. We implement Mitosis in Linux and evaluate its benefits on real hardware. Mitosis improves performance for large-scale
+                                    multi-socket workloads by up to 1.34x by replicating pagetables across sockets. Moreover, it improves performance by up to 3.24x in cases when the OS migrates a process across
+                                    sockets by enabling cross-socket page-table migration.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -165,10 +330,22 @@
                             <div class="pub-authors">Ashish Panwar, Sorav Bansal, K. Gopinath</div>
                             <div class="pub-venue">24th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2019.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-hawkeye')">Abstract</button>
                                 <a href="/publications/asplos-2019-hawkeye/hawkeye-asplos19.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/apanwariisc/HawkEye" class="btn btn-secondary">Code</a>
                                 <a href="/publications/asplos-2019-hawkeye/hawkeye-asplos19-slides.pdf" class="btn btn-secondary">Slides</a>
                                 <a href="/publications/asplos-2019-hawkeye/hawkeye-asplos19-poster.pdf" class="btn btn-secondary">Poster</a>
+                            </div>
+                            <div id="abstract-hawkeye" class="abstract-section">
+                                <p class="abstract-text">
+                                    Effective huge page management in operating systems is necessary for mitigation of address translation overheads. However, this continues to remain a difficult
+                                    area in OS design. Recent work on Ingens [55] uncovered some interesting pitfalls in current huge page management strategies. Using both page access patterns
+                                    discovered by the OS kernel and fine-grained data from hardware performance counters, we expose problematic aspects of current huge page management strategies.
+                                    In our system, called HawkEye/Linux, we demonstrate alternate ways to address issues related to performance, page fault latency and memory bloat; the primary
+                                    ideas behind HawkEye management algorithms are async page pre-zeroing, de-duplication of zero-filled pages, finegrained page access tracking and measurement of address
+                                    translation overheads through hardware performance counters. Our evaluation shows that HawkEye is more performant, robust and better-suited to handle diverse workloads
+                                    when compared with current state-of-the-art systems.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -176,10 +353,26 @@
                             <div class="pub-authors">Ashish Panwar, Aravinda Prasad, K. Gopinath</div>
                             <div class="pub-venue">23rd ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) 2018.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-illuminator')">Abstract</button>
                                 <a href="/publications/asplos-2018-illuminator/illuminator-asplos18.pdf" class="btn">Paper</a>
                                 <a href="https://github.com/apanwariisc/Illuminator" class="btn btn-secondary">Code</a>
                                 <a href="/publications/asplos-2018-illuminator/illuminator-asplos18-slides.pptx" class="btn btn-secondary">Slides</a>
                                 <a href="/publications/asplos-2018-illuminator/illuminator-asplos18-poster.pdf" class="btn btn-secondary">Poster</a>
+                            </div>
+                            <div id="abstract-illuminator" class="abstract-section">
+                                <p class="abstract-text">
+                                The virtual-to-physical address translation overhead, a major performance bottleneck for modern workloads, can be effectively alleviated with huge pages.
+                                However, since huge pages must be mapped contiguously, OSs have not been able to use them well because of the memory fragmentation problem despite hardware
+                                support for huge pages being available for nearly two decades.
+                                <br/><br/>
+                                This paper presents a comprehensive study of the interaction of fragmentation with huge pages in the Linux kernel. We observe that when huge pages are used, problems such
+                                as high CPU utilization and latency spikes occur because of unnecessary work (e.g., useless page migration) performed by memory management related subsystems due to the poor
+                                handling of unmovable (i.e., kernel) pages. This behavior is even more harmful in virtualized systems where unnecessary work may be performed in both guest and host OSs.
+                                <br/><br/>
+                                We present Illuminator, an efficient memory manager that provides various subsystems, such as the page allocator, the ability to track all unmovable pages. It allows subsystems to
+                                make informed decisions and eliminate unnecessary work which in turn leads to cost-effective huge page allocations. Illuminator reduces the cost of compaction (up to 99%),
+                                improves application performance (up to 2.3×) and reduces the maximum latency of MySQL database server (by 30×).
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -187,7 +380,21 @@
                             <div class="pub-authors">Ashish Panwar, Naman Patel, K. Gopinath</div>
                             <div class="pub-venue">7th ACM SIGOPS Asia-Pacific Workshop on Systems (APSys) 2016.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-apsys-2016')">Abstract</button>
                                 <a href="/publications/apsys-2016/apsys-2016-paper.pdf" class="btn">Paper</a>
+                            </div>
+                            <div id="abstract-apsys-2016" class="abstract-section">
+                                <p class="abstract-text">
+                                    Controlling memory fragmentation is critical for leveraging the benefits of huge page support offered by modern architectures. The division of free memory into non-contiguous
+                                    regions over time restricts huge page allocations in long run. Compaction is a popular mechanism to recover contiguous blocks of free memory on demand. However, its success rate
+                                    of accumulating free regions at huge page granularity (e.g., 2MB in x86 64) is low in most situations due to the presence of unmovable kernel memory. Hence, a prudent page placement
+                                    algorithm is required to control fragmentation and protect huge pages against kernel memory allocations, in order to sustain system performance over long periods of time.
+                                    <br/><br/>
+                                    In this work, we explore the interaction of kernel pages with fragmentation avoidance and recovery mechanism in Linux. Our analysis shows that stock kernel memory layout
+                                    thwarts the progress of memory compaction. Furthermore, compaction can potentially induce more fragmentation depending on where kernel memory was placed by the underlying
+                                    page allocator. We discuss the scope of optimization in current Linux framework and show how an effective fragmentation management can yield up to 20% performance improvement
+                                    and up to 27% energy savings with the help of additional huge pages.
+                                </p>
                             </div>
                         </div>
                         <div class="pub-card">
@@ -195,8 +402,26 @@
                             <div class="pub-authors">Ashish Panwar and K. Gopinath</div>
                             <div class="pub-venue">22nd IEEE International Conference on High Performance Computing (HiPC) 2015.</div>
                             <div class="pub-links">
+                                <button class="btn-abstract" onclick="toggleAbstract('abstract-hipc-2015')">Abstract</button>
                                 <a href="/publications/hipc-2015/hipc-2015-paper.pdf" class="btn">Paper</a>
                                 <a href="/publications/hipc-2015/hipc-2015-slides.pdf" class="btn btn-secondary">Slides</a>
+                            </div>
+                            <div id="abstract-hipc-2015" class="abstract-section">
+                                <p class="abstract-text">
+                                    Increased performance demand of modern applications has resulted in large memory modules and higher performance processors in computing systems. Power consumption becomes an important aspect when these
+                                    resources go underutilized in a running system; e.g. during idle periods or lighter workloads. CPUs have come a long way in optimizing away the unnecessary power consumption in both hardware and
+                                    software for such scenarios through solutions like Dynamic Voltage/Frequency Scaling. However, support for memory power optimization is still missing in modern operating systems despite hardware support
+                                    being available for many years in the form of multiple power states and techniques like Partial Array SelfRefresh.
+                                    <br/><br/>
+                                    In this work, we explore the behavior of Linux memory manager and report that even at 10% of memory utilization, there are references to all physical memory banks in a long
+                                    running system due to random page allocation and ignorance of memory bank boundaries. These references can be consolidated to a subset of memory banks by using page migration techniques.
+                                    Unfortunately, migration of large contiguous blocks is often restricted due to the presence of unmovable pages primarily owned by kernel.
+                                    <br/><br/>
+                                    We provide some techniques for utilizing the hardware facilitated Partial Array Self-Refresh by introducing bank awareness in the existing buddy allocation framework of Linux memory
+                                    manager as well as for improving the page migration support of large contiguous blocks. Through a set of simple changes in Linux VM, we have been able to reduce the number of referenced
+                                    memory banks significantly. Memory-hotplug framework, which relies on page migration of large contiguous blocks, also shows significant improvement in terms of number of removable memory
+                                    sections. Benchmark results show no performance degradation in the modified kernel which makes the proposed solution desirable.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -326,6 +551,20 @@
                 });
             }
         });
+
+        // Abstract toggle functionality
+        function toggleAbstract(abstractId) {
+            var abstractSection = document.getElementById(abstractId);
+            var btn = document.querySelector('[onclick="toggleAbstract(\'' + abstractId + '\')"]');
+            
+            if (abstractSection.classList.contains('expanded')) {
+                abstractSection.classList.remove('expanded');
+                btn.textContent = 'Abstract';
+            } else {
+                abstractSection.classList.add('expanded');
+                btn.textContent = 'Hide Abstract';
+            }
+        }
     </script>
 </body>
 </html>
