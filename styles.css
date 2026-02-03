@@ -207,31 +207,51 @@ html, body {
     font-weight: 700;
     color: var(--text);
 }
-.pub-authors { font-size: 0.9em; color: var(--muted); }
-.pub-venue { font-size: 0.88em; color: var(--muted); }
+.pub-authors { font-size: 0.9em; color: var(--muted); margin-top: 4px; }
+.pub-venue { font-size: 0.88em; color: var(--muted); margin-top: 2px; }
 
-.pub-links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+/* Venue badges */
+.pub-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: 700;
+    margin-right: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+.pub-badge.venue-top { background: #dbeafe; color: #1e40af; }
+.pub-badge.venue-preprint { background: #fef3c7; color: #92400e; }
+.pub-badge.venue-workshop { background: #e0e7ff; color: #3730a3; }
+body.dark .pub-badge.venue-top { background: #1e3a5f; color: #93c5fd; }
+body.dark .pub-badge.venue-preprint { background: #451a03; color: #fcd34d; }
+body.dark .pub-badge.venue-workshop { background: #312e81; color: #a5b4fc; }
 
+.pub-links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+/* Link buttons with icons */
 .btn {
-    display: inline;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     background: none;
     color: var(--accent);
     padding: 0;
     border: none;
     border-radius: 0;
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1.5px;
+    text-decoration: none;
     font-weight: 600;
     font-size: 0.85em;
     box-shadow: none;
-    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+    transition: color 0.15s ease;
+}
+.btn i {
+    font-size: 0.9em;
 }
 .btn:hover {
     background: none;
     color: var(--accent-strong);
-    text-decoration-color: var(--accent-strong);
     transform: none;
 }
 .btn:focus-visible {
@@ -240,22 +260,24 @@ html, body {
 }
 
 .btn-secondary {
-    display: inline;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     background: none;
     color: var(--accent);
     padding: 0;
     border: none;
     border-radius: 0;
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1.5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+.btn-secondary i {
+    font-size: 0.9em;
 }
 .btn-secondary:hover {
     background: none;
     color: var(--accent-strong);
-    text-decoration-color: var(--accent-strong);
-    border-color: transparent;
 }
 
 /* Abstract functionality */
@@ -281,26 +303,28 @@ html, body {
 }
 
 .btn-abstract {
-    display: inline;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     background: none;
     color: var(--accent);
     padding: 0;
     border: none;
     border-radius: 0;
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1.5px;
+    text-decoration: none;
     font-weight: 600;
     font-size: 0.85em;
     cursor: pointer;
-    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+    transition: color 0.15s ease;
+}
+
+.btn-abstract i {
+    font-size: 0.9em;
 }
 
 .btn-abstract:hover {
     background: none;
     color: var(--accent-strong);
-    text-decoration-color: var(--accent-strong);
 }
 
 .btn-abstract:focus-visible {
