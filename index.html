@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashish Panwar</title>
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -24,9 +24,18 @@
                 </p>
                 <div class="social-row">
                     <div class="social-links">
-                        <a href="http://scholar.google.co.in/citations?user=2navLOMAAAAJ&hl=en" target="_blank" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="https://github.com/apanwariisc" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/panwar-ashish/" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="http://scholar.google.co.in/citations?user=2navLOMAAAAJ&hl=en" target="_blank" title="Google Scholar" aria-label="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Scholar</span>
+                        </a>
+                        <a href="https://github.com/apanwariisc" target="_blank" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/panwar-ashish/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
                     </div>
                     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
                         <i class="fas fa-moon" aria-hidden="true"></i>
@@ -464,49 +473,69 @@
                 <section class="talks-section">
                     <ul class="talks-list">
                         <li class="talk-item">
-                            <div class="talk-title">Enabling Determinism in LLM Inference</div>
-                            <div class="talk-meta">Department of Computational and Data Sciences (CDS), IISc, 2026</div>
+                            <div class="talk-content">
+                                <div class="talk-title">Enabling Determinism in LLM Inference</div>
+                                <div class="talk-meta">Department of Computational and Data Sciences (CDS), IISc, 2026</div>
+                            </div>
                         </li>
                         <li class="talk-item">
-                            <div class="talk-title">From Basics to Breakthroughs: Tales from LLM Systems Research</div>
-                            <div class="talk-meta">Workshop on Present and Future Computing Systems, CSA, IISc, 2024</div>
+                            <div class="talk-content">
+                                <div class="talk-title">From Basics to Breakthroughs: Tales from LLM Systems Research</div>
+                                <div class="talk-meta">Workshop on Present and Future Computing Systems, CSA, IISc, 2024</div>
+                            </div>
                         </li>
                         <li class="talk-item">
-                            <div class="talk-title">Efficiently Serving Large Language Models</div>
-                            <div class="talk-meta">Center for Networked Intelligence, IISc, 2024</div>
+                            <div class="talk-content">
+                                <div class="talk-title">Efficiently Serving Large Language Models</div>
+                                <div class="talk-meta">Center for Networked Intelligence, IISc, 2024</div>
+                            </div>
                         </li>
                         <li class="talk-item">
-                            <div class="talk-title">Trident: Harnessing Architectural Resources for All Page Sizes in x86 Processors</div>
-                            <div class="talk-meta">MICRO, 2021 (virtual)</div>
+                            <div class="talk-content">
+                                <div class="talk-title">Trident: Harnessing Architectural Resources for All Page Sizes in x86 Processors</div>
+                                <div class="talk-meta">MICRO, 2021 (virtual)</div>
+                            </div>
                         </li>
                         <li class="talk-item">
-                            <div class="talk-title">Fast Local Page-Tables for Virtualized NUMA Servers with vMitosis</div>
-                            <div class="talk-meta">ASPLOS, 2021 (virtual)</div>
+                            <div class="talk-content">
+                                <div class="talk-title">Fast Local Page-Tables for Virtualized NUMA Servers with vMitosis</div>
+                                <div class="talk-meta">ASPLOS, 2021 (virtual)</div>
+                            </div>
                         </li>
                         <li class="talk-item">
-                            <div class="talk-title">System Software Enhancements for Efficient Memory Management</div>
-                            <div class="talk-meta">India Design Review, Semiconductor Research Corporation (SRC), Bangalore, India, January 2020</div>
+                            <div class="talk-content">
+                                <div class="talk-title">System Software Enhancements for Efficient Memory Management</div>
+                                <div class="talk-meta">India Design Review, Semiconductor Research Corporation (SRC), Bangalore, India, January 2020</div>
+                            </div>
                         </li>
                         <li class="talk-item">
-                            <div class="talk-title">OS and Hypervisor Support for Self-Replicating Page-Tables</div>
-                            <div class="talk-meta">VMware Research, Palo Alto, US, 2019</div>
+                            <div class="talk-content">
+                                <div class="talk-title">OS and Hypervisor Support for Self-Replicating Page-Tables</div>
+                                <div class="talk-meta">VMware Research, Palo Alto, US, 2019</div>
+                            </div>
                         </li>
                         <li class="talk-item">
-                            <div class="talk-title">Making Huge Pages Actually Useful</div>
-                            <ul class="talk-sublist">
-                                <li>ACM Inter-Research-Institute Student Symposium, Kochi, India, February 2019</li>
-                                <li>NetApp, Sunnyvale, US, April 2018</li>
-                                <li>Qualcomm, Bangalore, India, March 2018</li>
-                                <li>ASPLOS, Williamsburg, Virginia, US, 2018</li>
-                            </ul>
+                            <div class="talk-content">
+                                <div class="talk-title">Making Huge Pages Actually Useful</div>
+                                <ul class="talk-sublist">
+                                    <li>ACM Inter-Research-Institute Student Symposium, Kochi, India, February 2019</li>
+                                    <li>NetApp, Sunnyvale, US, April 2018</li>
+                                    <li>Qualcomm, Bangalore, India, March 2018</li>
+                                    <li>ASPLOS, Williamsburg, Virginia, US, 2018</li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="talk-item">
-                            <div class="talk-title">Light-Weight Contexts: An OS Abstraction for Safety and Performance</div>
-                            <div class="talk-meta">(Research paper—OSDI’16) Centre for Artificial Intelligence and Robotics, DRDO, Bangalore, India, October 2018</div>
+                            <div class="talk-content">
+                                <div class="talk-title">Light-Weight Contexts: An OS Abstraction for Safety and Performance</div>
+                                <div class="talk-meta">(Research paper—OSDI'16) Centre for Artificial Intelligence and Robotics, DRDO, Bangalore, India, October 2018</div>
+                            </div>
                         </li>
                         <li class="talk-item">
-                            <div class="talk-title">Towards Practical Page Placement for a Green Memory Manager</div>
-                            <div class="talk-meta">HiPC, Bangalore, India, 2015</div>
+                            <div class="talk-content">
+                                <div class="talk-title">Towards Practical Page Placement for a Green Memory Manager</div>
+                                <div class="talk-meta">HiPC, Bangalore, India, 2015</div>
+                            </div>
                         </li>
                     </ul>
                 </section>
