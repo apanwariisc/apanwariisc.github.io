@@ -465,6 +465,84 @@ html, body {
     color: var(--accent);
 }
 
+/* Education Section */
+.education-section {
+    padding: 0;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.education-item {
+    padding: 16px 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.education-item:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.education-degree {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.education-institution {
+    font-size: 0.9em;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.education-department {
+    font-size: 0.9em;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.education-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.88em;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.education-year {
+    font-size: 0.9em;
+    color: var(--muted);
+}
+
+.education-thesis {
+    font-size: 0.9em;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.education-thesis a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.education-thesis a:hover {
+    color: var(--accent-strong);
+}
+
+.education-advisors {
+    font-size: 0.88em;
+    color: var(--muted);
+}
+
 /* Responsive */
 @media (max-width: 800px) {
     .header-photo img { width: 160px; height: 160px; }
